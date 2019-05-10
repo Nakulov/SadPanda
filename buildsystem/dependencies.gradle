@@ -1,0 +1,138 @@
+ext {
+    //Android
+    androidBuildToolsVersion = "28.0.3"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+
+    //Libraries
+    supportVersion = '1.0.0'
+    kotlinVersion = '1.3.21'
+    kCoroutineVersion = '1.0.1'
+    daggerVersion = '2.11'
+    okHttpVersion = '3.11.0'
+    retrofitVersion = '2.4.0'
+    gsonVersion = '2.8.5'
+    constraintVersion = '1.1.2'
+    pageIndicatorVersion = '1.1.2'
+    coroutineAdapterVersion = '0.9.2'
+    timberVersion = '4.7.1'
+
+    textWatcherVersion = '0.5.0'
+
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    glideVersion = '4.7.1'
+    chartVersion = 'v3.0.3'
+    materialPickerVersion = '1.0.7'
+
+    picassoVersion = '2.71828'
+    picassoDownloaderVersion = '1.1.0'
+
+    blurVersion = '1.5.0'
+
+    //Auth
+    googleVersion = '16.0.1'
+    fbVersion = '4.40.0'
+    vkVersion = '1.6.9'
+    okVersion = '2.0.3'
+
+    //video
+    exoplayerVersion = '2.9.3'
+
+    //Analytics
+    firebaseVersion = '16.0.4'
+    analyticsVersion = '16.0.5'
+    crashlyticsVersion = '16.2.0'
+
+    //Development
+    leakCanaryVersion = '1.3.1'
+
+    //Testing
+    robolectricVersion = '4.1'
+    jUnitVersion = '3.2.1'
+    spekVersion = '2.0.0'
+    assertKVersion = '0.13'
+    mockitoVersion = '1.9.1.kotlin12'
+    dexmakerVersion = '1.2'
+    espressoVersion = '3.1.0'
+    testingSupportLibVersion = '0.1'
+    runnerVersion = '5.4.0'
+    rulesVersion = '1.1.0'
+
+    appDependencies = [
+            //kt
+            kotlin              : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            kReflection         : "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}",
+            kCoroutine          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${kCoroutineVersion}",
+            aCoroutine          : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${kCoroutineVersion}",
+            //android
+            supportDesign       : "com.google.android.material:material:$supportVersion",
+            supportAndroid      : "androidx.legacy:legacy-support-v4:${supportVersion}",
+            appCompat           : "androidx.appcompat:appcompat:${supportVersion}",
+            recycler            : "androidx.recyclerview:recyclerview:${supportVersion}",
+            constraint          : "androidx.constraintlayout:constraintlayout:${constraintVersion}",
+            card                : "androidx.cardview:cardview:${supportVersion}",
+            //di
+            daggerProcessor     : "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            daggerSupport       : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerCompiler      : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger              : "com.google.dagger:dagger-android:${daggerVersion}",
+            //net
+            okHttp              : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttpLogging       : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            retrofit            : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            gsonConverter       : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            coroutineAdapter    : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${coroutineAdapterVersion}",
+            //other
+            picasso             : "com.squareup.picasso:picasso:${picassoVersion}",
+            picassoDownloader   : "com.jakewharton.picasso:picasso2-okhttp3-downloader:${picassoDownloaderVersion}",
+            chart               : "com.github.PhilJay:MPAndroidChart:${chartVersion}",
+            //google analytics
+            googleFireBaseCore  : "com.google.firebase:firebase-core:${firebaseVersion}",
+            googleAnalytic      : "com.google.android.gms:play-services-analytics:${analyticsVersion}",
+            googleCrashLytics   : "com.google.firebase:firebase-crash:${crashlyticsVersion}",
+            fabric              : "com.crashlytics.sdk.android:crashlytics:2.9.6",
+
+            patternedTextWatcher: "com.szagurskii:patternedtextwatcher:${textWatcherVersion}",
+            //auth
+            vk                  : "com.vk:androidsdk:${vkVersion}",
+            fb                  : "com.facebook.android:facebook-login:${fbVersion}",
+            ok                  : "ru.ok:odnoklassniki-android-sdk:${okVersion}",
+            //fit
+            fitnes              : "com.google.android.gms:play-services-fitness:${googleVersion}",
+            google              : "com.google.android.gms:play-services-auth:${googleVersion}",
+            //video
+            exoplayer           : "com.google.android.exoplayer:exoplayer:$exoplayerVersion",
+            pageIndicator       : "com.shuhart.bubblepagerindicator:bubblepagerindicator:$pageIndicatorVersion",
+            blur                : "com.eightbitlab:blurview:$blurVersion",
+            materialPicker      : "com.github.StephenVinouze:MaterialNumberPicker:$materialPickerVersion",
+            dynamicAnimation    : "com.android.support:support-dynamic-animation:${supportVersion}",
+            //logs
+            timber              : "com.jakewharton.timber:timber:${timberVersion}"
+    ]
+
+    testsDependencies = [
+            kotlin           : "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            junit            : "io.kotlintest:kotlintest-runner-junit5:${jUnitVersion}",
+            spek             : "org.spekframework.spek2:spek-dsl-jvm:${spekVersion}",
+            spekJunit        : "org.spekframework.spek2:spek-runner-junit5:${spekVersion}",
+            mockito          : "io.mockk:mockk:${mockitoVersion}",
+            assertk          : "com.willowtreeapps.assertk:assertk-jvm:${assertKVersion}",
+            robolectric      : "org.robolectric:robolectric:${robolectricVersion}",
+            runner           : "org.junit.jupiter:junit-jupiter-api:${runnerVersion}",
+            runnerEngine     : "org.junit.jupiter:junit-jupiter-engine:${runnerVersion}",
+            rules            : "androidx.test:rules:${rulesVersion}",
+            dexmaker         : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito  : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            espresso         : "androidx.test.espresso:espresso-core:${espressoVersion}",
+            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
+            daggerCompiler   : "com.google.dagger:dagger-compiler:${daggerVersion}"
+    ]
+
+
+    developmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+    ]
+
+}
