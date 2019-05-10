@@ -20,7 +20,7 @@ abstract class BaseFragment: Fragment(), HasComponent<FragmentComponent> {
 
     private var navigation: NavigationDelegate? = null
 
-    override val component: FragmentComponent = fragmentComponent
+    override val component: FragmentComponent by lazy { fragmentComponent }
 
     abstract val viewId: Int
 

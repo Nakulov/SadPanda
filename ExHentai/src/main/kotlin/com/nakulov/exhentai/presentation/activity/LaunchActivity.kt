@@ -10,13 +10,14 @@ import com.nakulov.exhentai.presentation.di.HasComponent
 import com.nakulov.exhentai.presentation.di.components.ActivityComponent
 import com.nakulov.exhentai.presentation.di.components.DaggerActivityComponent
 import com.nakulov.exhentai.presentation.di.modules.ActivityModule
+import com.nakulov.exhentai.presentation.fragment.AuthFragment
 import kotlinx.android.synthetic.main.activity_launch.*
 
 class LaunchActivity : AppCompatActivity(), HasComponent<ActivityComponent>, NavigationDelegate {
 
     private lateinit var activityComponent: ActivityComponent
 
-    override val component: ActivityComponent = activityComponent
+    override val component: ActivityComponent by lazy { activityComponent }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +25,8 @@ class LaunchActivity : AppCompatActivity(), HasComponent<ActivityComponent>, Nav
         activityComponent.inject(this)
         calculateDensity()
         setContentView(R.layout.activity_launch)
+
+        presentFragment(AuthFragment.newInstance())
     }
 
     private fun initInjectors() {
@@ -66,7 +69,7 @@ class LaunchActivity : AppCompatActivity(), HasComponent<ActivityComponent>, Nav
     override fun closeCurrentFragment(): Boolean {
         onBackPressed()
 
-        return false
+        return true
     }
 
     override fun onBackPressed() {
@@ -77,5 +80,5 @@ class LaunchActivity : AppCompatActivity(), HasComponent<ActivityComponent>, Nav
 
 interface NavigationDelegate {
     fun presentFragment(fragment: Fragment, removeLast: Boolean = false)
-    fun closeCurrentFragment(): Boolean
+    fun closeCurrentFragment() : Boolean
 }
