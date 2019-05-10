@@ -1,7 +1,8 @@
-package com.nakulov.exhentai
+package com.nakulov.exhentai.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.nakulov.exhentai.R
 
 class MainActivity : AppCompatActivity() {
 
