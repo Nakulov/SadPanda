@@ -19,11 +19,9 @@ const val MATCH_PARENT = -1
 const val WRAP_CONTENT = -2
 
 fun dip(value: Int) = floor((density * value).toDouble()).toInt()
-
 fun dip(value: Float) = floor((density * value).toDouble()).toFloat()
 
 fun View.showKeyboard() = inputManager().showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
-
 fun View.hideKeyboard() {
     if (!inputManager().isActive) return
     else
