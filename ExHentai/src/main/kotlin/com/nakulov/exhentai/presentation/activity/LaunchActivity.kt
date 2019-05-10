@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.nakulov.exhentai.R
 import com.nakulov.exhentai.presentation.ExApplication.Companion.applicationComponent
+import com.nakulov.exhentai.presentation.calculateDensity
 import com.nakulov.exhentai.presentation.di.HasComponent
 import com.nakulov.exhentai.presentation.di.components.ActivityComponent
 import com.nakulov.exhentai.presentation.di.components.DaggerActivityComponent
@@ -21,6 +22,7 @@ class LaunchActivity : AppCompatActivity(), HasComponent<ActivityComponent>, Nav
         super.onCreate(savedInstanceState)
         initInjectors()
         activityComponent.inject(this)
+        calculateDensity()
         setContentView(R.layout.activity_launch)
     }
 

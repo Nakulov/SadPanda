@@ -1,6 +1,8 @@
 package com.nakulov.exhentai.presentation
 
 import android.app.Application
+import android.os.Handler
+import android.os.Looper
 import com.nakulov.exhentai.BuildConfig
 import com.nakulov.exhentai.presentation.di.components.ApplicationComponent
 import com.nakulov.exhentai.presentation.di.components.DaggerApplicationComponent
@@ -29,6 +31,8 @@ class ExApplication : Application() {
 
     companion object {
         lateinit var applicationComponent: ApplicationComponent
+
+        val applicationHandler = Handler(Looper.getMainLooper())
     }
 
     internal inner class AnalyticsReporterTree : Timber.Tree() {
